@@ -1,4 +1,4 @@
-#List of directories to backup
+#List of files/directories to backup
 dirs = [
     '/home/exampleuser/exampledirectory',
     '/home/exampleuser/anotherdirectory',
