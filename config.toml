@@ -20,7 +20,7 @@ rclone=['exampleremotename', 'exampleuser']
 pre_cmds = ['help', 'ls', 'dir']
 
 #Specify commands that should be run after the backup process has ended
-after_cmds = ['you', 'get', 'the', 'idea']
+post_cmds = ['you', 'get', 'the', 'idea']
 
 #Specify a name for the completed backup -- the date and time (as well as the file etension) will be appended to this value automatically
 backup_filename = 'myexamplebackup'
