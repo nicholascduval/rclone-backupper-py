@@ -21,7 +21,7 @@ for x in config["dirs"]:
 
 #Copy each MySQL/MariaDB database specified in the config file to the temporary directory
 for x in config["dbs"]:
-    subprocess.run(f"mysqldump --single-transaction -h {x[1]} -u {x[2]} --password=\"{x[3]}\" {x[0]} > {config['tempdir']}/{x[0]}.sql", shell=True)
+    subprocess.run(f"mysqldump --single-transaction -h {x[1]} -u {x[2]} --password=\'{x[3]}\' {x[0]} > {config['tempdir']}/{x[0]}.sql", shell=True)
 
 #Set the backup filename
 backup_filename_joined = f"{config['backup_filename']} {datetime.datetime.now().replace(microsecond=0)}.tgz"
