@@ -1,0 +1,26 @@
+#List of directories to backup
+dirs = [
+    '/home/exampleuser/exampledirectory',
+    '/home/exampleuser/anotherdirectory',
+]
+
+#Specify MySQL/MariaDB databases to backup, as well as their locations and credentials
+dbs = [
+    ['exampledatabase', 'examplehost', 'exampleuser', 'examplepassword'],
+    ['anotherdatabase', 'anotherhost', 'anotheruser', 'anotherpassword'],
+]
+
+#Specify the directory where temporary files should be stored -- a folder in /tmp is recommended
+tempdir = '/tmp/tempbackup'
+
+#Specify the name of your rclone remote as well as the linux user it is registered under
+rclone=['exampleremotename', 'exampleuser']
+
+#Specify commands that should be run prior to the backup process
+pre_cmds = ['help', 'ls', 'dir']
+
+#Specify commands that should be run after the backup process has ended
+after_cmds = ['you', 'get', 'the', 'idea']
+
+#Specify a name for the completed backup -- the date and time (as well as the file etension) will be appended to this value automatically
+backup_filename = 'myexamplebackup'
