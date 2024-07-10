@@ -27,7 +27,12 @@ def run_pre_cmds():
 #Copy each file/directory specified in the config file to the temporary directory
 def copy_files():    
     for x in config["dirs"]:
-        subprocess.run(f"cp -r {x} {config['tempdir']}", shell=True)
+        if os.path.isdir(x):
+            subprocess.run(f"rclone copy {x} {config['tempdir']}/{os.path.basename(x)}", shell=True)
+        elif os.path.isfile(x):
+            subprocess.run(f"rclone copyto {x} {config['tempdir']}", shell=True)
+        else:
+            print(f"Error: {x} is not a valid file or directory.")
 
 #Copy each MySQL/MariaDB database specified in the config file to the temporary directory
 def copy_dbs():
