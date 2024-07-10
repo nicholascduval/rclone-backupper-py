@@ -1,5 +1,4 @@
 # Rclone-Backupper
----
 ## Summary
 This python script may be used to automate the process of backing up files, directories or MySQL/MariaDB databases with Rclone.
 ## Dependencies
